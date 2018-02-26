@@ -57,13 +57,6 @@ bash block.sh
 
 To download and run
 
-curl -Lo install.sh https://raw.githubusercontent.com/crombiecrunch/yiimp_install_scrypt/master/install.sh
+curl -Lo install.sh https://github.com/kovenko/yiimp_install_scrypt/blob/master/install.sh
 
 bash install.sh
-
-If this helped you or you feel giving please donate BTC
-Donation: 16xpWzWP2ZaBQWQCDAaseMZBFwnwRUL4bD
-
-Feel free to join our Discord channel at https://discord.gg/zdBbAQ
-
-Crombie Crunch

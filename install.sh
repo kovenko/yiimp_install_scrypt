@@ -147,8 +147,6 @@ echo 'map $http_user_agent $blockedagent {
       ufw default deny incoming
       ufw default allow outgoing
       ufw allow ssh
-#      ufw allow ftp
-#      ufw allow 904/tcp
       ufw allow http
       ufw allow https
       ufw allow 2142/tcp
@@ -259,9 +257,6 @@ exec bash
     # write time to clock.
     hwclock -w
     clear
-
-
-
 
     output "Making Web Server Magic Happen!"
     # adding user to group, creating dir structure, setting permissions
@@ -833,7 +828,6 @@ $configAlgoNormCoef = array(
 
     output "Final Directory permissions"
     output ""
-    #whoami=`whoami`
     touch /var/log/debug.log
 
     chown -R www-data:www-data /var/stratum
