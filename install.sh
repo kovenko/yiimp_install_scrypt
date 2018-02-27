@@ -32,7 +32,7 @@
     read -e -p "Are you using a subdomain (pool.example.com?) [y/N] : " sub_domain
     read -e -p "Enter support email (e.g. admin@example.com) : " EMAIL
     read -e -p "Set stratum to AutoExchange? i.e. mine any coinf with BTC address? [y/N] : " BTC
-    read -e -p "Please enter a new location for /site/adminRights this is to customize the admin entrance url (e.g. myAdminpanel) : " admin_panel
+    read -e -p "Please enter a new location for /site/adminRights this is to customize the admin entrance url (e.g. myAdminpanel) /First char uppercase for action name/ : " admin_panel
     read -e -p "Enter your Public IP for admin access (http://www.whatsmyip.org/) : " Public
     read -e -p "Install Fail2ban? [Y/n] : " install_fail2ban
     read -e -p "Install UFW and configure ports? [Y/n] : " UFW
@@ -234,13 +234,13 @@ echo 'map $http_user_agent $blockedagent {
     cp -r stratum /var/stratum
     cp -r run.sh /var/stratum
     cd $HOME/yiimp
-    cp -r $HOME/yiimp/bin/. /bin/
+    cp -r $HOME/yiimp/bin/. /usr/local/bin/
     cp -r $HOME/yiimp/blocknotify/blocknotify /usr/local/bin/
     mkdir -p /etc/yiimp
     mkdir -p /$HOME/backup/
 
     #fixing yiimp
-    sed -i "s|ROOTDIR=/data/yiimp|ROOTDIR=/var|g" /bin/yiimp
+    sed -i "s|ROOTDIR=/data/yiimp|ROOTDIR=/var|g" /usr/local/bin/yiimp
     #fixing run.sh
     rm -r /var/stratum/config/run.sh
 
@@ -267,6 +267,10 @@ exec bash
     # write time to clock.
     hwclock -w
     clear
+
+
+
+
 
     output "Making Web Server Magic Happen!"
     # adding user to group, creating dir structure, setting permissions
