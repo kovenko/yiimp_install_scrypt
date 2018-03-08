@@ -50,13 +50,27 @@ You must update the following files:
    server.
 2. /etc/yiimp/keys.php - update with secrect keys from the exchanges.
 
-After you add the missing information to those files then run:
-bash main.sh
-bash loop2.sh
-bash block.sh
+3. After you add the missing information to those files then run:
+   bash main.sh
+   bash loop2.sh
+   bash block.sh
 
 To download and run
 
-curl -Lo install.sh https://github.com/kovenko/yiimp_install_scrypt/blob/master/install.sh
+as root!
 
-bash install.sh
+cd /tmp
+git clone https://github.com/kovenko/yiimp_install_scrypt.git
+./install.sh
+
+After installation is complete
+
+crontab -e
+
+@reboot /usr/bin/nohup /var/web/main.sh &
+@reboot /usr/bin/nohup /var/web/loop2.sh &
+@reboot /usr/bin/nohup /var/web/blocks.sh &
+# As example for lyra2v2
+@reboot /usr/bin/nohup /var/stratum/run.sh lyra2v2 &
+
+Start assembling the demons of coins
