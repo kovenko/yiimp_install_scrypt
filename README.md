@@ -103,7 +103,7 @@ rpcuser=yiimprpc
 /root/.racecore/race.conf  
 
 ## Add autoload daemon ##  
-
+\# crontab -e  
 @reboot /usr/local/bin/raced &  
 @reboot /usr/bin/nohup /var/web/main.sh &  
 @reboot /usr/bin/nohup /var/web/loop2.sh &  
