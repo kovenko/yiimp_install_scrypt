@@ -55,63 +55,63 @@ You must update the following files:
    bash loop2.sh
    bash block.sh
 
-To download and run
 
-as root!
 
-cd /tmp
-git clone https://github.com/kovenko/yiimp_install_scrypt.git && ./install.sh
+##To download and run
+**as root!**  
 
-After installation is complete
-crontab -e
-Add next strings
-@reboot /usr/bin/nohup /var/web/main.sh &
-@reboot /usr/bin/nohup /var/web/loop2.sh &
-@reboot /usr/bin/nohup /var/web/blocks.sh &
-# As example for lyra2v2
-@reboot /usr/bin/nohup /var/stratum/run.sh lyra2v2 &
+\#cd /tmp  
+\#git clone https://github.com/kovenko/yiimp_install_scrypt.git && ./install.sh  
 
-#Start assembling the demons of coins
+##After installation is complete
+\#crontab -e  
+Add next strings  
+@reboot /usr/bin/nohup /var/web/main.sh &  
+@reboot /usr/bin/nohup /var/web/loop2.sh &  
+@reboot /usr/bin/nohup /var/web/blocks.sh &  
+## As example for lyra2v2
+@reboot /usr/bin/nohup /var/stratum/run.sh lyra2v2 &  
 
-As example build RaceCoin daemon
-./racecoin.sh
+##Start assembling the demons of coins
+As example build RaceCoin daemon  
+\#./racecoin.sh
 
-After installation is complete goto Address Server Admin URL and click link CREATE COIN.
+After installation is complete goto Address Server Admin URL and click link CREATE COIN.  
 
-General tab
-name: Race
-symbol: RACE
-algo: lyra2v2
-image: /images/RACE.png
+####General tab  
+name: Race  
+symbol: RACE  
+algo: lyra2v2  
+image: /images/RACE.png  
 
-Settings tab
-Enable
-Auto Ready
-Watch
+####Settings tab  
+Enable on  
+Auto Ready on  
+Watch on  
 
-Daemon tab
-RPC Host: localhost
-RPC Port: 8801
+####Daemon tab  
+RPC Host: localhost  
+RPC Port: 8801  
 
-Save configuration
+Save configuration  
 
-Click COIN PROPERTIES link
-Daemon tab
-Copy Sample config:
-rpcuser=yiimprpc
-...
+Click COIN PROPERTIES link  
+
+####Daemon tab  
+Copy Sample config:  
+rpcuser=yiimprpc  
+...  
 
 Paste 
-/root/.racecore/race.conf
+/root/.racecore/race.conf  
 
-Add autoload daemon
+Add autoload daemon  
 
-@reboot /usr/local/bin/raced &
+@reboot /usr/local/bin/raced &  
+@reboot /usr/bin/nohup /var/web/main.sh &  
+@reboot /usr/bin/nohup /var/web/loop2.sh &  
+@reboot /usr/bin/nohup /var/web/blocks.sh &  
 
-@reboot /usr/bin/nohup /var/web/main.sh &
-@reboot /usr/bin/nohup /var/web/loop2.sh &
-@reboot /usr/bin/nohup /var/web/blocks.sh &
+@reboot /usr/bin/nohup /var/stratum/run.sh lyra2v2 &  
 
-@reboot /usr/bin/nohup /var/stratum/run.sh lyra2v2 &
-
-Reboot server! All is ready!
+Reboot server! All is ready!  
