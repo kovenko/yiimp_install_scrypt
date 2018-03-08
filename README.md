@@ -60,17 +60,58 @@ To download and run
 as root!
 
 cd /tmp
-git clone https://github.com/kovenko/yiimp_install_scrypt.git
-./install.sh
+git clone https://github.com/kovenko/yiimp_install_scrypt.git && ./install.sh
 
 After installation is complete
-
 crontab -e
-
+Add next strings
 @reboot /usr/bin/nohup /var/web/main.sh &
 @reboot /usr/bin/nohup /var/web/loop2.sh &
 @reboot /usr/bin/nohup /var/web/blocks.sh &
 # As example for lyra2v2
 @reboot /usr/bin/nohup /var/stratum/run.sh lyra2v2 &
 
-Start assembling the demons of coins
+#Start assembling the demons of coins
+
+As example build RaceCoin daemon
+./racecoin.sh
+
+After installation is complete goto Address Server Admin URL and click link CREATE COIN.
+
+General tab
+name: Race
+symbol: RACE
+algo: lyra2v2
+image: /images/RACE.png
+
+Settings tab
+Enable
+Auto Ready
+Watch
+
+Daemon tab
+RPC Host: localhost
+RPC Port: 8801
+
+Save configuration
+
+Click COIN PROPERTIES link
+Daemon tab
+Copy Sample config:
+rpcuser=yiimprpc
+...
+
+Paste 
+/root/.racecore/race.conf
+
+Add autoload daemon
+
+@reboot /usr/local/bin/raced &
+
+@reboot /usr/bin/nohup /var/web/main.sh &
+@reboot /usr/bin/nohup /var/web/loop2.sh &
+@reboot /usr/bin/nohup /var/web/blocks.sh &
+
+@reboot /usr/bin/nohup /var/stratum/run.sh lyra2v2 &
+
+Reboot server! Down!
