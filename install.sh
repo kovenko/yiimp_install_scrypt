@@ -604,4 +604,4 @@ $configAlgoNormCoef = array(
     output ""
     output "Please make sure to add your public and private keys."
     output ""
-    output "If you found this script helpful please consider donating some BTC Donation: 18AwGT19befE4Z3siEiAzsF8n9MoJEifiH"
+#    output "If you found this script helpful please consider donating some BTC Donation: 18AwGT19befE4Z3siEiAzsF8n9MoJEifiH"

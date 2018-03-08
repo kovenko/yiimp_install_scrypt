@@ -114,4 +114,4 @@ Add autoload daemon
 
 @reboot /usr/bin/nohup /var/stratum/run.sh lyra2v2 &
 
-Reboot server! Down!
+Reboot server! All is ready!
