@@ -53,7 +53,7 @@
 
     output "Installing Nginx server."
     output ""
-    aptitude -y install nginx
+    aptitude -y install nginx net-tools
     rm /etc/nginx/sites-enabled/default
     service nginx start
     service cron start
@@ -110,6 +110,10 @@ echo 'map $http_user_agent $blockedagent {
     ../dist/configure --enable-cxx --prefix=/usr/local
     make
     make install
+echo "
+/usr/local/lib
+" >> ld.so.conf
+    ldconfig
     clear
 
     output "Testing to see if server emails are sent"
