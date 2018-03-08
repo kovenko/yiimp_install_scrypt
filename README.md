@@ -57,61 +57,57 @@ You must update the following files:
 
 
 
-##To download and run
+##To download and run##
 **as root!**  
+\# cd /tmp  
+\# git clone https://github.com/kovenko/yiimp_install_scrypt.git && ./install.sh  
 
-\#cd /tmp  
-\#git clone https://github.com/kovenko/yiimp_install_scrypt.git && ./install.sh  
-
-##After installation is complete
-\#crontab -e  
-Add next strings  
+##After installation is complete##
+\# crontab -e  
+*Add next strings*  
 @reboot /usr/bin/nohup /var/web/main.sh &  
 @reboot /usr/bin/nohup /var/web/loop2.sh &  
 @reboot /usr/bin/nohup /var/web/blocks.sh &  
-## As example for lyra2v2
+##As example for lyra2v2##  
 @reboot /usr/bin/nohup /var/stratum/run.sh lyra2v2 &  
 
-##Start assembling the demons of coins
-As example build RaceCoin daemon  
-\#./racecoin.sh
+##Start assembling the demons of coins##
+*As example build RaceCoin daemon*  
+\# ./racecoin.sh
 
-After installation is complete goto Address Server Admin URL and click link CREATE COIN.  
+*After installation is complete goto "Address Server Admin" URL and click link "CREATE COIN".*  
 
-####General tab  
-name: Race  
-symbol: RACE  
-algo: lyra2v2  
-image: /images/RACE.png  
+####General tab####  
+Name: Race  
+Symbol: RACE  
+Algo: lyra2v2  
+Image: /images/RACE.png  
 
-####Settings tab  
+####Settings tab####  
 Enable on  
 Auto Ready on  
 Watch on  
 
-####Daemon tab  
+####Daemon tab####  
 RPC Host: localhost  
 RPC Port: 8801  
 
-Save configuration  
+Save configuration, click "COIN PROPERTIES" link.  
 
-Click COIN PROPERTIES link  
-
-####Daemon tab  
-Copy Sample config:  
+####Daemon tab####  
+*Copy Sample config to clipboard*  
 rpcuser=yiimprpc  
 ...  
 
-Paste 
+*Paste to configuration file* 
 /root/.racecore/race.conf  
 
-Add autoload daemon  
+##Add autoload daemon##  
 
 @reboot /usr/local/bin/raced &  
 @reboot /usr/bin/nohup /var/web/main.sh &  
 @reboot /usr/bin/nohup /var/web/loop2.sh &  
 @reboot /usr/bin/nohup /var/web/blocks.sh &  
-
 @reboot /usr/bin/nohup /var/stratum/run.sh lyra2v2 &  
 
-Reboot server! All is ready!  
+*Reboot server! All is ready!*  
